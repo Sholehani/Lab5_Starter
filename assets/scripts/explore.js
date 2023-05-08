@@ -2,21 +2,24 @@
 
 window.addEventListener('DOMContentLoaded', init);
 
+// Adds SpeechSynthesis
 let synth = window.speechSynthesis;
 
 function init() {
   let exploreSec = document.querySelector("#explore");
 
+  // Smile image and talk button
   const smileImg = exploreSec.querySelector("img");
   const talkButton = exploreSec.querySelector("button");
 
+  // Voice select element and input element from 
   const voiceSelect = exploreSec.querySelector("#voice-select");
   const inputTxt = exploreSec.querySelector("#text-to-speak");
 
-  console.log(voiceSelect.value);
-
+  // Initializes voices options
   let voices = [];
 
+  // Creates voice options based on browser
   function populateVoiceList() {
     voices = synth.getVoices();
 
@@ -39,10 +42,9 @@ function init() {
     speechSynthesis.onvoiceschanged = populateVoiceList;
   }
 
-  inputTxt.onsubmit = (event) => {
-    event.preventDefault();
-  }
-
+  // When Push to talk is pressed:
+  // creates a new utterance based on the selected voice and read test input;
+  // also speaks the utterance and handles the smile image when utterance ends
   talkButton.addEventListener("click", (event) => {
     const utterThis = new SpeechSynthesisUtterance(inputTxt.value);
     const selectedOption =
@@ -62,8 +64,5 @@ function init() {
     });
     inputTxt.blur();
   });
-
-
-
 
 }

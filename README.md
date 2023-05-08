@@ -1,5 +1,5 @@
 # Lab 5 - Starter
-## **Names**: Sholehani Hafezi
+## **Names**: Sholehani Hafezi, Nicholas Ho
 
 ## [Explore Pt. 2 Link](https://github.com/Sholehani/intro-github-actions.git)
 
