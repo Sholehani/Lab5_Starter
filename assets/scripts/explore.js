@@ -59,7 +59,6 @@ function init() {
     smileImg.src = "assets/images/smiling-open.png";
 
     utterThis.addEventListener("end", function () {
-      console.log(speechSynthesis.speaking);
       smileImg.src = "assets/images/smiling.png";
     });
     inputTxt.blur();
